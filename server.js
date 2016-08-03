@@ -10,7 +10,7 @@ io.on('connection', function(socket) {
 	console.log('user connected');
 	socket.on( 'message', function (message){
 		console.log("message received"+message.text);
-		socket.broadcast.emit('message', message);
+		io.emit('message', message);
 	});
 
 
